@@ -162,6 +162,12 @@ body{
         &:nth-child(2n){
           flex-direction: row-reverse;
         }
+
+        & .project-cover{
+          height: 200px;
+          aspect-ratio: 16/11;
+          object-fit: cover;
+        }
   
         & .project-details{
           display: flex;
@@ -179,6 +185,12 @@ body{
       display: flex;
       align-items: center;
       gap: 3em;
+
+      & .about-photo{
+        width: 300px;
+        aspect-ratio: 1/1;
+        object-fit: cover;
+      }
 
       & .about-text{
         font-size: 1.1em;
@@ -227,6 +239,7 @@ body{
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
 
   padding-bottom: 5em;
 
@@ -240,20 +253,25 @@ body{
   & .project-text{
     font-size: 1em;
     line-height: 1.8em;
+    padding-bottom: 1.5em;
   }
 
   & .project-phases{
     columns: 2;
-    width: 90%;
+    width: 100%;
 
-    padding: 2em 0 2em 5em;
+    padding: 2em 0 2em 2em;
 
     & li {
-      font-size: 1.5em;
+      font-size: 1.4em;
       list-style-type: none;
 
       display: flex;
       align-items: center;
+
+      &.tech::before{
+        content: '🔨';
+      }
 
       &::before{
         content: '💭';
@@ -263,13 +281,22 @@ body{
   }
 
   & .project-image{
-    width: 100%;
+    width: 80%;
     aspect-ratio: 16/9;
     object-fit: cover;
+
+    &.full{
+      aspect-ratio: unset;
+      padding-bottom: 5em;
+    }
   }
 
   & .project-phase{
     padding: 2em 0;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
   }
   
   & .project-subtitle{
